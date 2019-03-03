@@ -1,5 +1,4 @@
-import {css, clns} from './tyst'
-
+import {css} from '../../tyst/src/tyst' // FIXME path
 /*
 
 General requirements:
@@ -12,15 +11,16 @@ uses Babel it can parse your files.
 
 /* the CSS is extracted and the css() function call replaced with object literal that
 contains generated class names */
-const cln = css({
+export default css({
   heading: {
     color: '#888'
   },
-  content: {
+  item: {
     // thisShouldBeError: 'asd',
     fontSize: 14,
+    borderBotton: '1px solid #000',
+  },
+  itemFirst: {
+    borderTop: '1px solid #000',
   }
 })
-
-// combine multiple css classes
-const fooClassNames = clns(cln.heading, cln.content)
