@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import {clns} from '../../tyst/src/tyst' // FIXME path
+import {clns} from '../../tyst/dist/tyst' // FIXME path
 
 import cln from './foo.styles'
 

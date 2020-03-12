@@ -1,4 +1,6 @@
-import {css} from '../../tyst/src/tyst' // FIXME path
+import {css} from '../../tyst/dist/tyst' // FIXME path
+
+import {colors} from './colors.styles'
 /*
 
 General requirements:
@@ -13,7 +15,7 @@ uses Babel it can parse your files.
 contains generated class names */
 export default css({
   heading: {
-    color: '#888'
+    color: colors.cherryRed
   },
   item: {
     // thisShouldBeError: 'asd',

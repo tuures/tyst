@@ -16,7 +16,7 @@ export default function(this: loader.LoaderContext, content: string/*, sourceMap
     // filename: this.resourcePath,
     plugins: [stripMarkerBabelPlugin],
     presets: [
-      [require('@babel/preset-env'), { targets: { node: true } }]
+      [require('@babel/preset-env'), { debug: true, targets: { node: true } }]
     ]
   }
 
@@ -44,10 +44,11 @@ export default function(this: loader.LoaderContext, content: string/*, sourceMap
     const cssContent = astToCss(ast)
     console.log(cssContent)
 
-    let resultValue: any = [[this.resourcePath, cssContent]]
-    resultValue.locals = Object.keys(ast).reduce((acc, key) => ({...acc, [key]: key}), {})
+    const resultValue = [[this.resourcePath, cssContent]]
+    const locals = Object.keys(ast).reduce((acc, key) => ({...acc, [key]: key}), {})
 
-    const resultContent = `module.exports = ${JSON.stringify(resultValue)}`
+    const resultContent =
+      `module.exports = ${JSON.stringify(resultValue)};\nmodule.exports.locals = ${JSON.stringify(locals)};`
 
     callback(null, resultContent/*, map, meta*/)
   })

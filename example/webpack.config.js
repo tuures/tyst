@@ -40,5 +40,10 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "initial",
+    },
+  },
 }
