@@ -19,7 +19,7 @@
     "@types/webpack": "^4.4.25",
     "@babel/preset-env": "^7.3.4",
     "@babel/types": "^7.3.4",
-    "loader-utils": "^1.2.3",
+    "loader-utils": "^1.4.2",
     "require-from-string": "^2.0.2"
   }
 }
